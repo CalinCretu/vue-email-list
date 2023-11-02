@@ -12,8 +12,11 @@
 
 <body>
   <div id="app">
-
-    <div>{{ randomMail }}</div>
+    <ul>
+      <li v-for="mail in emailList" :key="mail">
+        {{ mail }}
+      </li>
+    </ul>
   </div>
   <script src="js/app.js"></script>
 </body>

@@ -1,22 +1,23 @@
 console.log('prova')
 
-const { createApp } = Vue
-
+const { createApp } = Vue;
+const apiUrl = 'https://flynn.boolean.careers/exercises/api/random/mail';
+const emailList = [];
 createApp({
   data() {
     return {
-      randomMail: '',
+      emailList: [],
     }
   },
   methods: {
     fetchMail() {
-      axios
-        .get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then((res) => {
-          console.log(res.data.response)
-          const mail = res.data.response
-          this.randomMail = mail
-        })
+      for (let i = 0; i < 10; i++) {
+        axios
+          .get(apiUrl)
+          .then((res) => {
+            this.emailList.push(res.data.response)
+          })
+      }
     }
   },
   created() {
