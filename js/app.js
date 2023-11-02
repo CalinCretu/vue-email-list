@@ -1,5 +1,3 @@
-console.log('prova')
-
 const { createApp } = Vue;
 const apiUrl = 'https://flynn.boolean.careers/exercises/api/random/mail';
 const emailList = [];
