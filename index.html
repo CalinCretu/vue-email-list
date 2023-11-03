@@ -12,7 +12,7 @@
 
 <body>
   <div id="app">
-    <ul>
+    <ul v-if="emailList.length === 10">
       <li v-for="mail in emailList" :key="mail">
         {{ mail }}
       </li>
